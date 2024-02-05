@@ -1,0 +1,9 @@
+import random
+import string
+
+def generate_random_code():
+    code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=16))
+    code_with_dashes = '-'.join([code[i:i+4] for i in range(0, len(code), 4)])
+    return code_with_dashes
+
+print(generate_random_code())
